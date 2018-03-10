@@ -81,21 +81,4 @@ function saveToSpreadSheet(array){
 
 
 
-/*function missed(){
-function onEdit(e){
-  // Set a comment on the edited cell to indicate when it was changed.
-  var spreadsheet = edited.range;
-  range.setNote('onedit: ' + no ());
-}
-}
-  showURL("https://docs.google.com/forms/d/e/1FAIpQLSfpsDW6kZmbWHIJ_go65vxEzBNfNLKaF0JACGobRQzq8BhSOA/viewform?usp=sf_link")
-
-//
-function showURL(href){
-  var app = UiApp.createApplication().setHeight(50).setWidth(200);
-  app.setTitle("Show URL");
-  var link = app.createAnchor('Click here to complete the Missed Deadline form ', href).setId("link");
-  app.add(link);  
-  var doc = SpreadsheetApp.getActive();
-  doc.show(app);
-  } */
+/
