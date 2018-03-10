@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style> 
+        #myForm{    
+        margin:0 auto; 
+        }
+  
+       input, textarea{
+       margin-top:5px;
+       margin-bottom:5px;
+       width: 200px;
+       }
+       
+       input, date{
+       margin-top:5px;
+       margin-bottom:5px;
+       width: 200px;
+       }
+       
+       label{
+      
+       
+       }
+       
+       input[type="text"]{
+       margin-top:5px;
+       margin-bottom:5px;
+       width: 200px;
+       }
+       
+       select {
+       margin-top:5px;
+       margin-bottom:5px;
+       width: 200px;
+       }
+</style>
+  </head>
+  <body>
+  <div id="formDiv">
+    <form name="myForm" id="myForm">   
+        <label for="dateMissed">Date Missed:</label><br>      
+        <input type="date" name="dateMissed" id="dateMissed"><br>   
+        <label for="media">Media:</label><br>      
+        <select name="media" id="media">
+        <option value="Daily TV"></option>
+        <option value="Brands">Brands</option>
+        <option value="Mags">Mags</option>
+        <option value="Press">Press</option>
+        <option value="Golf">Golf</option>
+        <option value="Digital">Digital</option>
+        <option value="RTV">RTV</option>
+        <option value="MTV">MTV</option>
+        <option value="Mpress">Mpress</option>
+        <option value="Mags - AdViews Batches">Mags - AdViews Batches</option>
+        <option value="Digital - Dates">Digital - Dates</option>
+        <option value="R&R Weekly">R&amp;R Weekly</option>
+        <option value="Creative">Creative</option>
+        <option value="Group B17">Group B17</option>
+        <option value="OMG">OMG</option>
+        <option value="Task 1">Task 1</option>
+        <option value="Task 2">Task 2</option>
+        <option value="Task 3">Task 3</option>
+        <option value="Task 4">Task 4</option>
+        <option value="Task 5">Task 5</option>
+        <option value="Task 6">Task 6</option>
+        <option value="Task 7">Task 7</option>
+        <option value="Task 8">Task 8</option>
+        <option value="Task 9">Task 9</option>
+        <option value="Task 10">Task 10</option>
+        <option value="Task 11">Task 11</option>
+        <option value="Task 12">Task 12</option>
+        <option value="Task 13">Task 13</option>
+        <option value="Task 14">Task 14</option>
+        </select><br>    
+        <label for="delayReason">Delay:</label><br>      
+        <textarea name="delayReason" id="delayReason" rows="10" cols="50" placeholder="What was the reason behind the delay?"></textarea><br>   
+        <label for="releaseDate">Actual Release Date:</label><br>    
+        <input type="date" name="releaseDate" id="releaseDate"><br> 
+        <label for="email">Email:</label><br>   
+        <input type="text" name="email" id="email"><br>
+        <label for="time">Time:</label><br>   
+        <input type="text" name="time" id="time"><br>
+        <input type="button" id="submit" value="Submit" onclick = "google.script.run.withSuccessHandler(sucSubmitted).processForm(document.getElementById('myForm'))" />
+        <input type="button" value="Close" onclick="google.script.host.close()" />
+     </form>
+   </div> 
+   <script>
+//called when form is successfully submitted 
+function sucSubmitted() 
+{
+  //get formDiv
+  var div = document.getElementById('formDiv'); 
+  //Add message and button that redirects to main form
+  div.innerHTML = "Thanks for Submitting!";
+  div.innerHTML += '<br><input type="button" name="button" value="Submit Again" onclick = "google.script.run.openDialog()""><br>';
+  div.innerHTML += '<input type="button" value="Close" onclick="google.script.host.close()" />';
+  console.log("suc submit");
+  }
+  </script>
+  </body>
+ </html>
